@@ -1,0 +1,39 @@
+// FONTS
+$font: 'Open Sans', sans-serif;
+$font32: 32px;
+$font28: 28px;
+$font24: 24px;
+$font18: 18px;
+$font16: 16px;
+$font14: 14px;
+$font12: 12px;
+$font10: 10px;
+
+// COLORS
+$light: #fff;
+$dark: #000;
+
+// BREAKPOINTS
+$sm: 640px;
+$md: 768px;
+$lg: 1024px;
+$xl: 1280px;
+$xxl: 1536px;
+
+$space-xxx-small: 0.5rem;
+$space-xx-small: 0.625rem;
+$space-x-small: 0.75rem;
+$space-small: 0.875rem;
+$space-medium: 1rem;
+$space-large: 1.125rem;
+$space-x-large: 1.25rem;
+$space-xx-large: 1.375rem;
+$space-xl: 1.5rem;
+$space-xxl: 2rem;
+
+.font-bold {
+    font-weight: 700;
+}
+.font-ita {
+    font-style: italic;
+}

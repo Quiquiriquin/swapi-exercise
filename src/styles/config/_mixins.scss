@@ -1,0 +1,68 @@
+
+@mixin text-contrast($n) {
+    $color-brightness: round((red($n) * 299) + (green($n) * 587) + (blue($n) * 114) / 1000);
+    $light-color: round((red(#ffffff) * 299) + (green(#ffffff) * 587) + (blue(#ffffff) * 114) / 1000);
+  
+    @if abs($color-brightness) < ($light-color/2){
+      color: white;
+    }
+  
+    @else {
+      color: black;
+    }
+  }
+  
+  @mixin media($media) {
+    @media (min-width: $sm) { @content; }
+  }
+  
+  @mixin build-classes($type, $place, $tag) {
+    @if $place=='top' {
+        #{$type}-top: calc($tag * 0.25rem);
+    }
+    @else if $place=='all' {
+        #{$type}: calc($tag * 0.25rem);
+    }
+    @else if $place=='bottom' {
+        #{$type}-bottom: calc($tag * 0.25rem);
+    }
+    @else if $place=='left' {
+        #{$type}-left: calc($tag * 0.25rem);
+    }
+    @else if $place=='right' {
+        #{$type}-right: calc($tag * 0.25rem);
+    }
+    @else if $place=='x' {
+        #{$type}-right: calc($tag * 0.25rem);
+        #{$type}-left: calc($tag * 0.25rem);
+    }
+    @else if $place=='y' {
+        #{$type}-top: calc($tag * 0.25rem);
+        #{$type}-bottom: calc($tag * 0.25rem);
+    }
+  }
+  
+  @mixin gap-classes($type, $tag) {
+    @if $type=='normal' {
+        gap: calc($tag * 0.25rem);
+    }
+    @else if $type=='row' {
+        row-gap: calc($tag * 0.25rem);
+    }
+    @else if $type=='col' {
+        column-gap: calc($tag * 0.25rem);
+    }
+  }
+  
+  @mixin grid-classes($type, $tag) {
+    @if $type=='row' {
+        grid-template-rows: repeat($tag, calc(100% / $tag));
+    }
+    @else if $type=='col' {
+        grid-template-columns: repeat($tag, calc(100% / $tag));
+    }
+  }
+  
+  @mixin build-width-classes($divide) {
+    width: calc(100%/$divide);
+  }

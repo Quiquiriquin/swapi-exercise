@@ -1,0 +1,226 @@
+.flex {
+    display: flex;
+}
+.flex-col {
+    flex-direction: column;
+}
+.flex-row {
+    flex-direction: row;
+}
+.justify {
+    &-between {
+        justify-content: space-between;
+    }
+    &-center {
+        justify-content: center;
+    }
+}
+
+.items {
+    &-center {
+        align-items: center;
+    }
+}
+
+@for $i from 1 through 12 {
+    .gap-#{$i} {
+        @include gap-classes('normal',
+        $i);
+    }
+    .gap-x-#{$i} {
+        @include gap-classes('row',
+        $i);
+    }
+    .gap-y-#{$i} {
+        @include gap-classes('col',
+        $i);
+    }
+}
+
+// Generate styles from specific class from 1 to 12 prefix
+// Multiply 'i' * 0.25rem
+@for $i from 1 through 12 {
+    // Margin
+    .mt-#{$i} {
+        @include build-classes('margin',
+        'top',
+        $i);
+    }
+    .mb-#{$i} {
+        @include build-classes('margin',
+        'bottom',
+        $i);
+    }
+    .ml-#{$i} {
+        @include build-classes('margin',
+        'left',
+        $i);
+    }
+    .mr-#{$i} {
+        @include build-classes('margin',
+        'right',
+        $i);
+    }
+    .m-#{$i} {
+        @include build-classes('margin',
+        'all',
+        $i);
+    }
+    .my-#{$i} {
+        @include build-classes('margin',
+        'y',
+        $i);
+    }
+    .mx-#{$i} {
+        @include build-classes('margin',
+        'x',
+        $i);
+    }
+    // Padding
+    .pt-#{$i} {
+        @include build-classes('padding',
+        'top',
+        $i);
+    }
+    .pb-#{$i} {
+        @include build-classes('padding',
+        'bottom',
+        $i);
+    }
+    .pl-#{$i} {
+        @include build-classes('padding',
+        'left',
+        $i);
+    }
+    .pr-#{$i} {
+        @include build-classes('padding',
+        'right',
+        $i);
+    }
+    .p-#{$i} {
+        @include build-classes('padding',
+        'all',
+        $i);
+    }
+    .px-#{$i} {
+        @include build-classes('padding',
+        'x',
+        $i);
+    }
+    .py-#{$i} {
+        @include build-classes('padding',
+        'y',
+        $i);
+    }
+}
+
+.w-full {
+    width: 100% !important;
+}
+
+.mx-auto {
+    margin: 0 auto !important;
+}
+
+.text-xxs {
+    font-size: 0.625rem;
+}
+
+.text-xs {
+    font-size: 0.75rem;
+}
+
+.text-sm {
+    font-size: 0.875rem;
+}
+
+.text-base {
+    font-size: 1rem;
+}
+
+.text-lg {
+    font-size: 1.125rem !important;
+}
+
+.text-lg-2 {
+    font-size: 1.25rem;
+}
+
+.text-xl {
+    font-size: 1.5rem;
+}
+
+
+.text-xxl {
+    font-size: 2rem;
+}
+
+
+.text-center {
+    text-align: center !important;
+}
+.text-left {
+    text-align: left !important;
+}
+.text-justify {
+    text-align: justify;
+}
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.block {
+    display: block;
+    text-align: left;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.relative {
+    position: relative;
+}
+
+.image-button {
+    color: #3a3a3a;
+    background: #FFE81F;
+    border: none;
+    height: 36px;
+    border-radius: 5px;
+    min-width: 110px;
+    max-width: max-content;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0 1rem 2px 1rem;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.skeleton-loader {
+    animation-duration: 10s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: placeHolderShimmer;
+    animation-timing-function: linear;
+    background: #f2f2f2;
+    background: linear-gradient(
+      to right,
+      #7d7d7d 8%,
+      #8b8b8b 18%,
+      #7d7d7d 33%
+    );
+    background-size: 100% 100%;
+    position: relative;
+    border: 2px solid transparent !important;
+}
+
+@keyframes placeHolderShimmer {
+    0% {
+      background-position: -868px 0;
+    }
+    100% {
+      background-position: 868px 0;
+    }
+  }
